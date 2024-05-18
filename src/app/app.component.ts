@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OlympicService } from './core/services/olympic.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,7 @@ import { OlympicService } from './core/services/olympic.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private olympicService: OlympicService) { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

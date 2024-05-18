@@ -1,6 +1,5 @@
-
 export interface EventGraph {
-    name: string,
-    value: number,
-    label: string
+  name: string;
+  value: number;
+  label: string;
 }
