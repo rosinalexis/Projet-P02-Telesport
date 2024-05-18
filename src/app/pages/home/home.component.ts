@@ -15,7 +15,6 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit, OnDestroy {
 
   //la partie de graphique
-  view: number[] = [700, 400];
   showLegend: boolean = true;
 
   showLabels: boolean = true;

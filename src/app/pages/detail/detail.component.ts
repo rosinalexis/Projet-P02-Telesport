@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Graph } from 'src/app/core/models/Graph';
 import { Olympic } from 'src/app/core/models/Olympic';
@@ -28,7 +28,11 @@ export class DetailComponent implements OnDestroy, OnInit {
 
   subscription!: Subscription;
 
-  constructor(private router: ActivatedRoute, private olympicService: OlympicService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private olympicService: OlympicService,
+  ) {
 
   }
 
@@ -37,7 +41,7 @@ export class DetailComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit() {
-    const id: string | null = this.router.snapshot.paramMap.get('id');
+    const id: string | null = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.subscription = this.olympicService.getOlympicByCountryById(+id).subscribe((res) => {
         this.olympic = res;
@@ -72,6 +76,8 @@ export class DetailComponent implements OnDestroy, OnInit {
 
   }
 
-
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
 
 }

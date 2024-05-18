@@ -33,4 +33,7 @@
     </div>
   </section>
 </div>
-<h4 *ngIf="!olympicFormatData" class="center">Aucune Données à afficher !</h4>
+
+<div *ngIf="olympicFormatData.length < 1" class="container">
+  <h4 class="my-4 text-center">oups... impossible de charger les données !</h4>
+</div>
