@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="olympicFormatData" class="container">
   <h2
     class="mb-5 bg-success text-center text-white p-2 col-md-4 mx-auto mt-4 border rounded"
   >
@@ -32,5 +32,5 @@
       </ngx-charts-pie-chart>
     </div>
   </section>
-  <!-- <p>{{ (olympics$ | async)?.length }} data loaded</p> -->
 </div>
+<h4 *ngIf="!olympicFormatData" class="center">Aucune Données à afficher !</h4>

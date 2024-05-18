@@ -7,19 +7,16 @@ import { Olympic } from '../models/Olympic';
   providedIn: 'root',
 })
 export class OlympicService {
-  private olympicUrl = './assets/mock/olympic.json';
-
-  private olympicList: Olympic[] = [];
+  private olympicUrl = 'http://localhost:3000/olympics/';
 
   constructor(private http: HttpClient) { }
 
   getOlympics(): Observable<Olympic[]> {
-    return this.http.get<Olympic[]>(this.olympicUrl).pipe();
+    return this.http.get<Olympic[]>(this.olympicUrl).pipe() ?? [];
   }
 
-  getOlympicByCountryName(countryName: string) {
-    const olympic: Olympic | undefined = this.olympicList.find(olympic => olympic.country === countryName);
-    return olympic;
+  getOlympicByCountryById(countryID: number): Observable<Olympic> {
+    return this.http.get<Olympic>(`${this.olympicUrl}${countryID}`) ?? null;
   }
 
 }

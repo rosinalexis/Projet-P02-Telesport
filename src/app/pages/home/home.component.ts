@@ -5,6 +5,7 @@ import { EventGraph } from 'src/app/core/models/EventGraph';
 import { Graph } from 'src/app/core/models/Graph';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -66,9 +67,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onSelect(event: EventGraph): void {
-    //TODO: faire un control de country name /formatage
-    console.log(event.name);
-    this.router.navigate(['/country/', event.name]);
+    const selectedCountry: Olympic | undefined = this.olympicList.find(olympic => olympic.country === event.name);
+    this.router.navigate(['/country/', selectedCountry?.id]);
   }
 }
 
