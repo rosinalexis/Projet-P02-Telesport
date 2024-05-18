@@ -6,36 +6,51 @@
   </h2>
 
   <section>
-    <div class="mx-auto col-10 text-center">
-      <div class="row mx-auto">
-        <div class="py-2 col-3 border rounded border-success border-2">
+    <div class="mb-4 mx-auto">
+      <div class="row mx-2 text-center">
+        <div class="py-2 col border rounded border-success border-2">
           <p class="fst-italic">Number of entries</p>
           <span>{{ olympic.participations.length }}</span>
         </div>
 
-        <div class="py-2 mx-2 col-4 border rounded border-success border-2">
+        <div class="py-2 col mx-2 col-4 border rounded border-success border-2">
           <p class="fst-italic">Total number medals</p>
           <span>{{ numberOfMedal }}</span>
         </div>
-        <div class="py-2 col-3 border rounded border-success border-2">
+        <div class="py-2 col border rounded border-success border-2">
           <p class="fst-italic">Total number of athletes</p>
           <span>{{ numberOfAthlete }}</span>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <ngx-charts-bar-vertical
-        [results]="olympicFormatData"
-        [xAxis]="showXAxis"
-        [yAxis]="showYAxis"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-      >
-      </ngx-charts-bar-vertical>
-    </div>
+    <ngx-charts-bar-vertical
+      [results]="olympicFormatData"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
   </section>
+
+  <div class="mb-5 container">
+    <button class="btn btn-dark" (click)="goBack()">
+      Retour vers la page d'accueil
+    </button>
+  </div>
 </div>
-<h4 *ngIf="!olympic" class="center">Aucune Données à afficher !</h4>
+
+<div *ngIf="!olympic" class="container">
+  <h4 class="text-center my-5">
+    Oups...Un problème est survenu, impossble de récuperer les informations !
+  </h4>
+
+  <div class="mb-5 container">
+    <button class="btn btn-dark" (click)="goBack()">
+      Retour vers la page d'accueil
+    </button>
+  </div>
+</div>

@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Olympic } from '../models/Olympic';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OlympicService {
-  private olympicUrl = 'http://localhost:3000/olympics/';
+  private olympicUrl = environment.apiOlympicUrl;
 
   constructor(private http: HttpClient) { }
 
