@@ -4,7 +4,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DetailComponent } from './pages/detail/detail.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -12,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'country/:id',
-    component: DetailComponent
+    component: DetailComponent,
   },
   {
     path: '**', // wildcard
@@ -24,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
