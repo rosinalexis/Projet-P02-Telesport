@@ -27,7 +27,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private olympicService: OlympicService, private router: Router) {}
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   ngOnInit(): void {
