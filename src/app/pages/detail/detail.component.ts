@@ -10,7 +10,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent implements OnDestroy, OnInit {
+export class DetailComponent implements OnInit, OnDestroy {
   // options
   showXAxis = true;
   showYAxis = true;
@@ -34,10 +34,12 @@ export class DetailComponent implements OnDestroy, OnInit {
   ) {}
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id: string | null = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.subscription = this.olympicService

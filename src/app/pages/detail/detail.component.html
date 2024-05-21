@@ -37,20 +37,14 @@
   </section>
 
   <div class="mb-5 container">
-    <button class="btn btn-dark" (click)="goBack()">
-      Retour vers la page d'accueil
-    </button>
+    <button class="btn btn-dark" (click)="goBack()">Go back</button>
   </div>
 </div>
 
 <div *ngIf="!olympic" class="container">
-  <h4 class="text-center my-5">
-    Oups...Un problème est survenu, impossble de récuperer les informations !
-  </h4>
+  <h4 class="text-center my-5">No corresponding information found</h4>
 
   <div class="mb-5 container">
-    <button class="btn btn-dark" (click)="goBack()">
-      Retour vers la page d'accueil
-    </button>
+    <button class="btn btn-dark" (click)="goBack()">Go back</button>
   </div>
 </div>
