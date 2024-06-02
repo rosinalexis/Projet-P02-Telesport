@@ -12,13 +12,13 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 })
 export class DetailComponent implements OnInit, OnDestroy {
   // options
-  showXAxis = true;
-  showYAxis = true;
-  showLegend = false;
-  showXAxisLabel = true;
-  xAxisLabel = 'Years';
-  showYAxisLabel = true;
-  yAxisLabel = 'Medals';
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  showLegend: boolean = false;
+  showXAxisLabel: boolean = true;
+  xAxisLabel: string = 'Years';
+  showYAxisLabel: boolean = true;
+  yAxisLabel: string = 'Medals';
 
   olympic!: Olympic;
   numberOfMedal!: number;

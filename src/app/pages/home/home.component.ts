@@ -14,7 +14,6 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class HomeComponent implements OnInit, OnDestroy {
   //la partie de graphique
   showLegend: boolean = true;
-
   showLabels: boolean = true;
   explodeSlices: boolean = false;
   doughnut: boolean = false;

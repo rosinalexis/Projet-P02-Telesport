@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class OlympicService {
-  private olympicUrl = environment.apiOlympicUrl;
+  private olympicUrl: string = environment.apiOlympicUrl;
 
   constructor(private http: HttpClient) {}
 
